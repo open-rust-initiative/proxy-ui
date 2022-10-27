@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Script from 'next/script';
+
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 
 import { Layout } from '@/components/Layout'
@@ -63,6 +65,19 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-W6F289JN4D`} />
+
+      <Script strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W6F289JN4D', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
