@@ -9,17 +9,20 @@ import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
 
 const codeLanguage = 'javascript'
-const code = `export default {
-  strategy: 'predictive',
-  engine: {
-    cpus: 12,
-    backups: ['./storage/cache.wtf'],
-  },
+const code = `fn main() {
+    let mut config = config::Config::new();
+
+    let result = cli::main(&mut config);
+
+    match result {
+        Err(e) => e.print(),
+        Ok(()) => {}
+    }
 }`
 
 const tabs = [
-  { name: 'cache-advance.config.js', isActive: true },
-  { name: 'package.json', isActive: false },
+  { name: 'main.rs', isActive: true },
+  { name: 'Cargo.toml', isActive: false },
 ]
 
 function TrafficLightsIcon(props) {
@@ -49,10 +52,10 @@ export function Hero() {
             />
             <div className="relative">
               <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
-              Freighter
+              Rust 中国社区基础设施
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                A simple crates registry.
+                crates.io 镜像服务和 crate 缓存服务
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 <Button href="/">Get started</Button>

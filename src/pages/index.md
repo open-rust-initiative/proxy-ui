@@ -1,73 +1,53 @@
 ---
-title: Getting started
-pageTitle: Freighter - A simple crates registry
-description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
-domain: https://crate-files.rust-lang.pub
+title: Rust 中国社区基础设施服务
+pageTitle: Rust 中国社区基础设施服务
+description: Rust 中国社区基础设施服务目标为中国的开发者提供 crates.io 镜像服务，crate 缓存服务和 Rust 安装服务等。
+domain: https://proxy.rust-lang.pub
 ---
 
-Learn how to get Freighter set up in your project in under thirty minutes or it's free. {% .lead %}
+Rust 中国社区基础设施服务目标为中国的开发者提供 crates.io 镜像服务，crate 缓存服务和 Rust 安装服务等。 {% .lead %}
 
 
 ---
 
 ## Quick start
 
+[Rust 基础设施](https://infra.rust-lang.pub)是由 [Rust 中国社区](https://rust-lang.pub) 维护的，目前提供了以下服务：
 
-### Freighter - A simple crates registry
-
-Freighter is a simple crates registry that can be used to host your own private crates. It's not a fork of [crates.io](https://crates.io), and it's not a replacement for it also.
+  * crates.io 镜像
+  * crates 缓存
+  * Rust 安装
 
 ### Why?
 
-Usually, you don't need to host your own crate registry. When we are developing program using Rust in the company, we need to host private crates registry for the following reasons:
+由于网络原因，访问 crates.io 的索引和下载可能会非常慢，甚至无法访问。为了解决这个问题，我们提供了一个 crates.io 代理服务，可以让你访问 crates.io 时更快。
 
-1. We need to use some crates that are not published to crates.io, such as some internal crates.
-2. We need to use some crates that are published to crates.io, but we need to modify them to fit our needs.
-3. We need to use crates in our build system or CI/CD workflow.
+### Freighter - A Crates Registry and Official Mirror
 
-### What's the major features?
-
-1. Support sync crates index from crates.io.
-2. Support cache crates file from crates.io.
-3. Support publish crates to the registry.
+[Rust 中国社区](https://rust-lang.pub) 维护的 [Rust 基础设施](https://infra.rust-lang.pub)是使用 [Freighter](https://github.com/rust-lang-cn/freighter) 部署，目前提供 Rust crate 索引代理，以及为中国大陆地区开发者使用的 crates 缓存服务。
 
 ### How to use?
 
-#### crates.io 镜像
+#### rust-lang.pub 代理的使用方式
 
-```shell
-~/.cargo/config:
+编辑 ``~/.cargo/config`` 文件，添加如下内容：
 
+```toml
 [source.crates-io]
-# To use sparse index, change 'rsproxy' to 'rsproxy-sparse'
-replace-with = 'rsproxy'
+replace-with = 'rustpub'
 
-[source.rsproxy]
+[source.rustpub]
 registry = "{% $markdoc.frontmatter.domain %}/crates.io-index" 
-[source.rsproxy-sparse]
-registry = "sparse+{% $markdoc.frontmatter.domain %}/index/"
 
-[registries.rsproxy]
+[registries.rustpub]
 index = "{% $markdoc.frontmatter.domain %}/crates.io-index"
-
-[net]
-git-fetch-with-cli = true
-```
-#### Rustup 镜像
-
-
-```bash
-~/.zshrc or ~/.bashrc:
-
-export RUSTUP_DIST_SERVER="{% $markdoc.frontmatter.domain %}"
-export RUSTUP_UPDATE_ROOT="{% $markdoc.frontmatter.domain %}/rustup"
 ```
 
 ### How to contribute?
 
-This project enforce the [DCO](https://developercertificate.org).
+向 [Freighter](https://github.com/open-rust-initiative/freighter) 项目提交 PR 必须签署 [DCO](https://developercertificate.org).
 
-Contributors sign-off that they adhere to these requirements by adding a Signed-off-by line to commit messages.
+贡献者通过在提交信息中添加 __Signed-off-by__ 行来证明他们遵守这些要求：
 
 ```bash
 This is my commit message
@@ -75,7 +55,8 @@ This is my commit message
 Signed-off-by: Random J Developer <random@developer.example.org>
 ```
 
-Git even has a -s command line option to append this automatically to your commit message:
+
+如果使用 __Git__ 提交代码，可以使用 ``-s`` 参数自动添加 ``Signed-off-by`` 行：
 
 ```bash
 $ git commit -s -m 'This is my commit message'
@@ -83,12 +64,7 @@ $ git commit -s -m 'This is my commit message'
 
 ### License
 
-Freighter is licensed under this Licensed:
+[Freighter](https://github.com/open-rust-initiative/freighter) 是使用 Rust 编程语言开发的开源项目，基于 MIT 开源协议和 Apache 2.0 开源协议发布。
 
-* MIT LICENSE ( [LICENSE-MIT](LICENSE-MIT) or https://opensource.org/licenses/MIT) 
-* Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or https://www.apache.org/licenses/LICENSE-2.0)
-
-### Acknowledgements
-
-更新频率：每分钟一次
-test auto build
+* MIT LICENSE ( [LICENSE-MIT](https://github.com/open-rust-initiative/freighter/blob/main/LICENSE-MIT) or https://opensource.org/licenses/MIT) 
+* Apache License, Version 2.0 ([LICENSE-APACHE](https://github.com/open-rust-initiative/freighter/blob/main/LICENSE-APACHE) or https://www.apache.org/licenses/LICENSE-2.0)
