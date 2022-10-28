@@ -1,18 +1,18 @@
 ---
-title: Rust 中国社区基础设施服务
-pageTitle: Rust 中国社区基础设施服务
-description: Rust 中国社区基础设施服务目标为中国的开发者提供 crates.io 镜像服务，crate 缓存服务和 Rust 安装服务等。
-domain: https://proxy.rust-lang.pub
+title: Rust 中国开源社区基础设施服务
+pageTitle: Rust 中国开源社区基础设施服务
+description: Rust 中国开源社区基础设施服务目标为中国的开发者提供 crates.io 镜像服务，crate 缓存服务和 Rust 安装服务等。
+domain: https://infra.rust-lang.pub
 ---
 
-Rust 中国社区基础设施服务目标为中国的开发者提供 crates.io 镜像服务，crate 缓存服务和 Rust 安装服务等。 {% .lead %}
+Rust 中国开源社区基础设施服务目标为中国的开发者提供 crates.io 镜像服务，crate 缓存服务和 Rust 安装服务等。 {% .lead %}
 
 
 ---
 
 ## Quick start
 
-[Rust 基础设施](https://infra.rust-lang.pub)是由 [Rust 中国社区](https://rust-lang.pub) 维护的，目前提供了以下服务：
+[Rust 基础设施](https://infra.rust-lang.pub)是由 [Rust 中国开源社区](https://rust-lang.pub) 维护的，目前提供了以下服务：
 
   * crates.io 镜像
   * crates 缓存
@@ -24,7 +24,7 @@ Rust 中国社区基础设施服务目标为中国的开发者提供 crates.io �
 
 ### Freighter - A Crates Registry and Official Mirror
 
-[Rust 中国社区](https://rust-lang.pub) 维护的 [Rust 基础设施](https://infra.rust-lang.pub)是使用 [Freighter](https://github.com/rust-lang-cn/freighter) 部署，目前提供 Rust crate 索引代理，以及为中国大陆地区开发者使用的 crates 缓存服务。
+[Rust 中国开源社区](https://rust-lang.pub) 维护的 [Rust 基础设施](https://infra.rust-lang.pub)是使用 [Freighter](https://github.com/rust-lang-cn/freighter) 部署，目前提供 Rust crate 索引代理，以及为中国大陆地区开发者使用的 crates 缓存服务。
 
 ### How to use?
 
