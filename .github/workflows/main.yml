@@ -9,21 +9,7 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest      
-    steps:
-    - name: Checkout sources
-      uses: actions/checkout@v3
-
-    - name: Install doctl
-      uses: digitalocean/action-doctl@v2
-      with:
-        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-    - name: Build container image
-      run: docker build -t ${{ secrets.REGISTRY_NAME }}/proxy-ui:latest .
-
-    - name: Log in to DigitalOcean Container Registry with short-lived credentials
-      run: doctl registry login --expiry-seconds 1200
-
-    - name: Push image to DigitalOcean Container Registry
-      run: docker push ${{ secrets.REGISTRY_NAME }}/proxy-ui:latest
+    uses: open-rust-initiative/freighter/.github/workflows/do-common-build.yml@main
+    with:
+      image-name: proxy-ui:latest
+    secrets: inherit
