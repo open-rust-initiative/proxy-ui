@@ -68,3 +68,9 @@ $ git commit -s -m 'This is my commit message'
 
 * MIT LICENSE ( [LICENSE-MIT](https://github.com/open-rust-initiative/freighter/blob/main/LICENSE-MIT) or https://opensource.org/licenses/MIT) 
 * Apache License, Version 2.0 ([LICENSE-APACHE](https://github.com/open-rust-initiative/freighter/blob/main/LICENSE-APACHE) or https://www.apache.org/licenses/LICENSE-2.0)
+
+### Contact
+
+如在使用中遇到问题，请发邮件到 [infra@rust-lang.pub](mailto:infra@rust-lang.pub) 联系咨询。 
+
+如果您在部署中遇到 [Freighter](https://github.com/open-rust-initiative/freighter) 的问题，欢迎提交 [issue](https://github.com/open-rust-initiative/freighter/issues) ，我们会尽快解决。
