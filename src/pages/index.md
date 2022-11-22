@@ -37,10 +37,10 @@ Rust 中国开源社区基础设施服务目标为中国的开发者提供 crate
 replace-with = 'rustpub'
 
 [source.rustpub]
-registry = "{% $markdoc.frontmatter.domain %}/crates.io-index" 
+registry = "https://proxy.rust-lang.pub/crates.io-index" 
 
 [registries.rustpub]
-index = "{% $markdoc.frontmatter.domain %}/crates.io-index"
+index = "https://proxy.rust-lang.pub/crates.io-index"
 ```
 
 ### How to contribute?
