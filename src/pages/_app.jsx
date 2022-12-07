@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Script from 'next/script';
 
 import { slugifyWithCounter } from '@sindresorhus/slugify'
-
+import { Analytics } from '@vercel/analytics/react';
 import { Layout } from '@/components/Layout'
 
 import 'focus-visible'
@@ -87,6 +87,7 @@ export default function App({ Component, pageProps }) {
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
       </Layout>
+      <Analytics />
     </>
   )
 }
